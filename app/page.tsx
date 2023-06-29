@@ -1,7 +1,11 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Mousewheel, Keyboard } from "swiper";
+
 import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/mousewheel";
 
 export default function Home() {
  return (
@@ -11,7 +15,15 @@ export default function Home() {
      <p className="text-[24px]">함께 행복을 누릴 수 있는 곳</p>
      <h2 className="font-black text-[50px] leading-[50px]">Paw,rest</h2>
     </div>
-    <Swiper className="w-full bg-slate-200 h-[100vh]">
+    <Swiper
+     className="w-full bg-slate-200 h-[100vh]"
+     speed={1000}
+     modules={[Pagination, Mousewheel, Keyboard]}
+     pagination={{ clickable: false }}
+     autoplay={{ delay: 100 }}
+     mousewheel
+     keyboard
+    >
      <SwiperSlide>
       <img
        src="/images/img1.jpeg"
